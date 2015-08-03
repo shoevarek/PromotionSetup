@@ -1,53 +1,39 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="hackaton.promotionsetup.activities.ListPromotions">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="?android:dividerHorizontal"
+    android:showDividers="middle">
 
-    <GridLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true">
+        android:layout_height="wrap_content"
+        style="?android:buttonBarStyle">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <Button
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="5"
-            android:layout_gravity="center_horizontal"
-            style="?android:buttonBarStyle">
+            android:text="@string/btn_summary"
+            android:id="@+id/btn_Summary"
+            android:background="?android:attr/selectableItemBackground"
+            style="?android:buttonBarButtonStyle"
+            android:layout_weight="1" />
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_summary"
-                android:id="@+id/btn_New"
-                android:layout_gravity="center_horizontal"
-                android:background="?android:attr/selectableItemBackground"
-                style="?android:buttonBarButtonStyle"
-                android:layout_weight="1" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_new"
+            android:id="@+id/btn_New"
+            android:background="?android:attr/selectableItemBackground"
+            style="?android:buttonBarButtonStyle"
+            android:layout_weight="1" />
+    </LinearLayout>
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_new"
-                android:id="@+id/btn_Summary"
-                android:layout_gravity="center_horizontal"
-                android:background="?android:attr/selectableItemBackground"
-                style="?android:buttonBarButtonStyle"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <ListView
-            android:layout_width="365dp"
-            android:layout_height="404dp"
-            android:id="@+id/lst_Promotions"
-            android:layout_row="2"
-            android:layout_column="5"
-            android:headerDividersEnabled="true" />
-    </GridLayout>
-</RelativeLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/lst_Promotions"
+        android:scrollbarStyle="outsideOverlay" />
+</LinearLayout>
