@@ -19,7 +19,12 @@ public class ListPromotions extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_promotions);
+
+        try {
+            setContentView(R.layout.activity_list_promotions);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         setListAdapter(mListAdapter);
     }
@@ -41,10 +46,9 @@ public class ListPromotions extends ListActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            // TODO: create new intent and register it with view promotion summary action
             return true;
         }
-
-        // TODO: create new intent and register it with view promotion summary action
 
         return super.onOptionsItemSelected(item);
     }
