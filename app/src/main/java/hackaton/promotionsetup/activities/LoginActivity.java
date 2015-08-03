@@ -42,7 +42,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "anysmallshop:password"
+            "smallshop:smallshop"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -144,8 +144,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
 
-            Intent i = new Intent(getApplicationContext(), ListPromotions.class);
-            startActivity(i);
         }
     }
 
@@ -156,7 +154,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return password.length() > 1;
     }
 
     /**
@@ -278,12 +276,19 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 String[] pieces = credential.split(":");
                 if (pieces[0].equals(mEmail)) {
                     // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
+
+                    if (pieces[1].equals(mPassword)) {
+                        Intent i = new Intent(getApplicationContext(), ListPromotions.class);
+                        startActivity(i);
+
+                        return true;
+
+                    }
                 }
             }
 
             // TODO: register the new account here.
-            return true;
+            return false;
         }
 
         @Override
