@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="5"
-            android:layout_gravity="center_horizontal"
             style="?android:buttonBarStyle">
 
             <Button
@@ -26,7 +25,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btn_summary"
                 android:id="@+id/btn_New"
-                android:layout_gravity="center_horizontal"
                 android:background="?android:attr/selectableItemBackground"
                 style="?android:buttonBarButtonStyle"
                 android:layout_weight="1" />
@@ -36,7 +34,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btn_new"
                 android:id="@+id/btn_Summary"
-                android:layout_gravity="center_horizontal"
                 android:background="?android:attr/selectableItemBackground"
                 style="?android:buttonBarButtonStyle"
                 android:layout_weight="1" />
