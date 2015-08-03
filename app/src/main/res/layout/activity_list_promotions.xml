@@ -15,25 +15,31 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="59dp"
+            android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_column="5">
+            android:layout_column="5"
+            android:layout_gravity="center_horizontal"
+            style="?android:buttonBarStyle">
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_new"
-                android:id="@+id/btn_Summary"
-                android:maxWidth="170dp"
-                android:minWidth="170dp" />
-
-            <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_summary"
                 android:id="@+id/btn_New"
-                android:maxWidth="170dp"
-                android:minWidth="170dp" />
+                android:layout_gravity="center_horizontal"
+                android:background="?android:attr/selectableItemBackground"
+                style="?android:buttonBarButtonStyle"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_new"
+                android:id="@+id/btn_Summary"
+                android:layout_gravity="center_horizontal"
+                android:background="?android:attr/selectableItemBackground"
+                style="?android:buttonBarButtonStyle"
+                android:layout_weight="1" />
         </LinearLayout>
 
         <ListView
