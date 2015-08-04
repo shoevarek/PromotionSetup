@@ -30,6 +30,10 @@
             android:name=".activities.PromotionSetup"
             android:label="@string/title_activity_promotion_setup" >
         </activity>
+        <activity
+            android:name=".activities.PromotionSummary"
+            android:label="@string/title_activity_promotion_summary" >
+        </activity>
     </application>
 
 </manifest>

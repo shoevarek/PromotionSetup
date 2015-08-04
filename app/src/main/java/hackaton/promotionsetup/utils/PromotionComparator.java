@@ -16,6 +16,10 @@ public class PromotionComparator implements Comparator<Promotion> {
             if (PromotionStatus.ACTIVE.equals(lhs.getCurrentStatus())) {
                 return -1;
             } else {
+                if (PromotionStatus.DRAFT.equals(lhs.getCurrentStatus())) {
+                    return -1;
+                }
+
                 return 1;
             }
         } else {
