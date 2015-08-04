@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class Promotion {
     private String id;
-    private String description;
+    private String title;
     private Date start;
     private Date end;
     private int percentage;
@@ -15,12 +15,12 @@ public class Promotion {
     private double minAmount;
     private PromotionStatus currentStatus;
 
-    public String getDescription() {
-        return description;
+    public String getTitle() {
+        return title;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Date getStart() {

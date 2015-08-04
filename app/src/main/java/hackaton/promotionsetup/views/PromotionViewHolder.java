@@ -2,11 +2,13 @@ package hackaton.promotionsetup.views;
 
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.LinearLayout;
 
 /**
  * Created by vatermann on 8/3/2015.
  */
 public class PromotionViewHolder {
+    private LinearLayout rowLayout;
     private TextView titleText;
     private TextView durationText;
     private ImageButton viewButton;
@@ -42,5 +44,13 @@ public class PromotionViewHolder {
 
     public void setStatusButton(ImageButton statusButton) {
         this.statusButton = statusButton;
+    }
+
+    public LinearLayout getRowLayout() {
+        return rowLayout;
+    }
+
+    public void setRowLayout(LinearLayout rowlayout) {
+        this.rowLayout = rowlayout;
     }
 }

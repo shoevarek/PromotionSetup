@@ -14,26 +14,26 @@ public class PromotionComparator implements Comparator<Promotion> {
     public int compare(Promotion lhs, Promotion rhs) {
         if (!lhs.getCurrentStatus().equals(rhs.getCurrentStatus())) {
             if (PromotionStatus.ACTIVE.equals(lhs.getCurrentStatus())) {
-                return 1;
-            } else {
                 return -1;
+            } else {
+                return 1;
             }
         } else {
             int i = compareDates(lhs, rhs);
 
             if (i == 0) {
-                i = compareDescriptions(lhs, rhs);
+                i = compareTitles(lhs, rhs);
             }
 
             return i;
         }
     }
 
-    private int compareDescriptions(Promotion lhs, Promotion rhs) {
-        return lhs.getDescription().compareTo(rhs.getDescription());
+    private int compareTitles(Promotion lhs, Promotion rhs) {
+        return lhs.getTitle().compareTo(rhs.getTitle());
     }
 
     private int compareDates(Promotion lhs, Promotion rhs) {
-        return lhs.getEnd().compareTo(rhs.getEnd());
+        return -1 * lhs.getEnd().compareTo(rhs.getEnd());
     }
 }

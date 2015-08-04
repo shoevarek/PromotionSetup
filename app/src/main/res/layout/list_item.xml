@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:divider="?android:dividerVertical"
     android:dividerPadding="8dp"
-    android:showDividers="middle">
+    android:showDividers="middle"
+    android:id="@+id/promo_row">
 
     <!--
         Any view or view group can become interactive by simply setting the
@@ -24,17 +25,21 @@
         android:clickable="true"
         android:focusable="true"
         android:gravity="center_vertical"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
         android:background="?android:selectableItemBackground">
 
         <TextView style="?android:textAppearanceListItemSmall"
-            android:id="@android:id/text1"
+            android:id="@+id/promo_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/item_title"
             android:textStyle="bold" />
 
         <TextView style="?android:textAppearanceSmall"
-            android:id="@android:id/text2"
+            android:id="@+id/promo_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/item_subtitle" />
