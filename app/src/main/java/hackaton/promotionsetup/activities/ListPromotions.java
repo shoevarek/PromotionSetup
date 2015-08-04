@@ -81,18 +81,18 @@ public class ListPromotions extends ListActivity {
 
     private List<Promotion> createTestPromotions() {
         List<Promotion> promotions = new ArrayList<Promotion>();
-        promotions.add(createPromotion("P001", "Spend 50$ and get 5$ off", PromotionStatus.INACTIVE, 5.0d, 50.0d, "2015-05-09", "2015-05-10"));
-        promotions.add(createPromotion("P002", "Spend 50$ and get 5$ off", PromotionStatus.INACTIVE, 5.0d, 50.0d, "2015-05-16", "2015-05-17"));
+        promotions.add(createPromotion("P001", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-05-09", "2015-05-10"));
+        promotions.add(createPromotion("P002", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-05-16", "2015-05-17"));
         promotions.add(createPromotion("P003", "Spend 100$ and get 50$ off", PromotionStatus.ACTIVE, 10.0d, 100.0d, "2015-08-04", "2015-08-04"));
-        promotions.add(createPromotion("P004", "Spend 25$ and get 5$ off", PromotionStatus.INACTIVE, 5.0d, 25.0d, "2015-05-23", "2015-05-24"));
-        promotions.add(createPromotion("P005", "Spend 50$ and get 5$ off", PromotionStatus.INACTIVE, 5.0d, 50.0d, "2015-05-30", "2015-05-31"));
-        promotions.add(createPromotion("P006", "Spend 50$ and get 5$ off", PromotionStatus.INACTIVE, 5.0d, 50.0d, "2015-06-06", "2015-06-07"));
-        promotions.add(createPromotion("P007", "Spend 50$ and get 5$ off", PromotionStatus.INACTIVE, 5.0d, 50.0d, "2015-06-13", "2015-06-14"));
-        promotions.add(createPromotion("P008", "Spend 50$ and get 5$ off", PromotionStatus.INACTIVE, 5.0d, 50.0d, "2015-06-20", "2015-06-21"));
-        promotions.add(createPromotion("P009", "Spend 50$ and get 5$ off", PromotionStatus.INACTIVE, 5.0d, 50.0d, "2015-06-27", "2015-06-28"));
-        promotions.add(createPromotion("P010", "Spend 50$ and get 5$ off", PromotionStatus.INACTIVE, 5.0d, 50.0d, "2015-07-04", "2015-07-05"));
-        promotions.add(createPromotion("P011", "Spend 50$ and get 5$ off", PromotionStatus.INACTIVE, 5.0d, 50.0d, "2015-07-11", "2015-07-12"));
-        promotions.add(createPromotion("P012", "Spend 10$ and get 1$ off", PromotionStatus.INACTIVE, 1.0d, 10.0d, "2015-07-18", "2015-07-19"));
+        promotions.add(createPromotion("P004", "Spend 25$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 25.0d, "2015-05-23", "2015-05-24"));
+        promotions.add(createPromotion("P005", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-05-30", "2015-05-31"));
+        promotions.add(createPromotion("P006", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-06-06", "2015-06-07"));
+        promotions.add(createPromotion("P007", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-06-13", "2015-06-14"));
+        promotions.add(createPromotion("P008", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-06-20", "2015-06-21"));
+        promotions.add(createPromotion("P009", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-06-27", "2015-06-28"));
+        promotions.add(createPromotion("P010", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-07-04", "2015-07-05"));
+        promotions.add(createPromotion("P011", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-07-11", "2015-07-12"));
+        promotions.add(createPromotion("P012", "Spend 10$ and get 1$ off", PromotionStatus.EXPIRED, 1.0d, 10.0d, "2015-07-18", "2015-07-19"));
 
         return promotions;
     }
@@ -179,6 +179,8 @@ public class ListPromotions extends ListActivity {
             viewHolder.setTitleText((TextView) convertView.findViewById(R.id.promo_title));
             viewHolder.setDurationText((TextView) convertView.findViewById(R.id.promo_desc));
             viewHolder.setViewButton((ImageButton) convertView.findViewById(R.id.secondary_action));
+            viewHolder.setStatusButton((ImageButton) convertView.findViewById(R.id.img_status));
+            viewHolder.setStatusText((TextView) convertView.findViewById(R.id.lbl_status));
 
             // set UI widget content
             final Promotion promotion = promotions.get(position);
@@ -186,10 +188,26 @@ public class ListPromotions extends ListActivity {
             viewHolder.getDurationText().setText(formatDurationText(promotion.getStart(), promotion.getEnd()));
 
             // set UI widget style
-            if (PromotionStatus.ACTIVE.equals(promotion.getCurrentStatus())) {
-                viewHolder.getRowLayout().setBackgroundColor(0xFFFFEB3B);
-            } else {
-                viewHolder.getRowLayout().setBackgroundColor(0xFF00B0FF);
+            switch (promotion.getCurrentStatus()) {
+                case ACTIVE:
+                    viewHolder.getRowLayout().setBackgroundColor(0xFFFFEB3B);
+                    viewHolder.getViewButton().setImageResource(R.drawable.ic_equalizer_white_24dp);
+                    viewHolder.getStatusButton().setImageResource(R.drawable.ic_av_timer_white_24dp);
+                    viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_active));
+                    break;
+                case EXPIRED:
+                    viewHolder.getRowLayout().setBackgroundColor(0xFF00B0FF);
+                    viewHolder.getViewButton().setImageResource(R.drawable.ic_equalizer_white_24dp);
+                    viewHolder.getStatusButton().setImageResource(R.drawable.ic_history_white_24dp);
+                    viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_expired));
+                    break;
+                case DRAFT:
+                    viewHolder.getViewButton().setImageResource(R.drawable.ic_settings_white_24dp);
+                    viewHolder.getStatusButton().setImageResource(R.drawable.ic_history_white_24dp);
+                    viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_draft));
+                    break;
+                default:
+                    viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_expired));
             }
 
             // set UI widget listeners

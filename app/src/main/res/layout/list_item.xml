@@ -2,8 +2,6 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:divider="?android:dividerVertical"
-    android:dividerPadding="8dp"
     android:showDividers="middle"
     android:id="@+id/promo_row">
 
@@ -48,19 +46,30 @@
 
     </LinearLayout>
 
-    <!--
-        When using the Holo theme, setting a Button or ImageButton to
-        ?android:borderlessButtonStyle removes its border and sets the
-        background to ?android:selectableItemBackground, as described above.
-    -->
-    <ImageButton
-        android:layout_width="@dimen/standard_touch_target_size"
-        android:layout_height="match_parent"
-        android:id="@+id/imageButton"
-        android:src="@drawable/ic_av_timer_white_24dp"
-        style="?android:borderlessButtonStyle"
-        android:contentDescription="@string/item_status"
-        android:longClickable="false" />
+    <LinearLayout
+        android:id="@+id/lay_status"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/img_status"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_av_timer_white_24dp"
+            style="?android:borderlessButtonStyle" />
+
+        <TextView
+            android:id="@+id/lbl_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/item_status_expired"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+
+    </LinearLayout>
 
     <ImageButton android:id="@+id/secondary_action"
         style="?android:borderlessButtonStyle"

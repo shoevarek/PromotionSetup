@@ -19,7 +19,7 @@ public class PromotionSetup extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_promotion_setup, menu);
+        getMenuInflater().inflate(R.menu.menu_list_promotions, menu);
         return true;
     }
 
@@ -31,7 +31,7 @@ public class PromotionSetup extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.Logoff) {
             return true;
         }
 

@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
  */
 public class PromotionViewHolder {
     private LinearLayout rowLayout;
+    private TextView statusText;
     private TextView titleText;
     private TextView durationText;
     private ImageButton viewButton;
@@ -52,5 +53,13 @@ public class PromotionViewHolder {
 
     public void setRowLayout(LinearLayout rowlayout) {
         this.rowLayout = rowlayout;
+    }
+
+    public TextView getStatusText() {
+        return statusText;
+    }
+
+    public void setStatusText(TextView statusText) {
+        this.statusText = statusText;
     }
 }

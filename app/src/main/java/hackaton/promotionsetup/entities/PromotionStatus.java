@@ -6,5 +6,5 @@ package hackaton.promotionsetup.entities;
 public enum PromotionStatus {
     ACTIVE,
     DRAFT,
-    INACTIVE;
+    EXPIRED;
 }
