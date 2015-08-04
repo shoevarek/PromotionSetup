@@ -81,10 +81,7 @@ public class ListPromotions extends ListActivity {
 
     private List<Promotion> createTestPromotions() {
         List<Promotion> promotions = new ArrayList<Promotion>();
-        promotions.add(createPromotion("P001", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-05-09", "2015-05-10"));
-        promotions.add(createPromotion("P002", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-05-16", "2015-05-17"));
         promotions.add(createPromotion("P003", "Spend 100$ and get 50$ off", PromotionStatus.ACTIVE, 10.0d, 100.0d, "2015-08-04", "2015-08-04"));
-        promotions.add(createPromotion("P004", "Spend 25$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 25.0d, "2015-05-23", "2015-05-24"));
         promotions.add(createPromotion("P005", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-05-30", "2015-05-31"));
         promotions.add(createPromotion("P006", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-06-06", "2015-06-07"));
         promotions.add(createPromotion("P007", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-06-13", "2015-06-14"));
@@ -192,6 +189,7 @@ public class ListPromotions extends ListActivity {
             switch (promotion.getCurrentStatus()) {
                 case ACTIVE:
                     viewHolder.getRowLayout().setBackgroundColor(0xFFFFEB3B);
+                    viewHolder.getViewButton().refreshDrawableState();
                     viewHolder.getViewButton().setImageResource(R.drawable.ic_equalizer_white_24dp);
                     viewHolder.getStatusButton().setImageResource(R.drawable.ic_av_timer_white_24dp);
                     viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_active));
@@ -205,9 +203,11 @@ public class ListPromotions extends ListActivity {
                             startActivity(i);
                         }
                     });
+                    viewHolder.getViewButton().refreshDrawableState();
                     break;
                 case EXPIRED:
-                    viewHolder.getRowLayout().setBackgroundColor(0xFF00B0FF);
+                    viewHolder.getRowLayout().setBackgroundColor(0x0FF9FA8DA);
+                    viewHolder.getViewButton().refreshDrawableState();
                     viewHolder.getViewButton().setImageResource(R.drawable.ic_equalizer_white_24dp);
                     viewHolder.getStatusButton().setImageResource(R.drawable.ic_history_white_24dp);
                     viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_expired));
@@ -221,6 +221,7 @@ public class ListPromotions extends ListActivity {
                             startActivity(i);
                         }
                     });
+                    viewHolder.getViewButton().refreshDrawableState();
                     break;
                 case DRAFT:
                     viewHolder.getViewButton().setImageResource(R.drawable.ic_settings_white_24dp);
@@ -236,9 +237,11 @@ public class ListPromotions extends ListActivity {
                             startActivity(i);
                         }
                     });
+                    viewHolder.getViewButton().refreshDrawableState();
                     break;
                 default:
                     viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_expired));
+                    viewHolder.getViewButton().refreshDrawableState();
             }
 
             // set UI widget listeners
