@@ -1,101 +1,76 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="hackaton.promotionsetup.activities.PromotionSummary">
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        android:id="@+id/PromotionSummaryTbl">
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dip" >
-            <TextView
-                android:id="@+id/textView1"
-                android:text="Offer Description:"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dip" >
+    <TextView
+        android:id="@+id/view_offerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:text="Spend 50$ and get 5$ off"
+        android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:text="Offer Description goes here"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dip" >
-            <TextView
-                android:id="@+id/textView3"
-                android:text="Start Date:"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dip" >
+    <TextView
+        android:id="@+id/view_bonusAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/view_offerText"
+        android:text=" Bonus amount: 5$" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:text="Start Date goes here"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRow5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dip" >
-            <TextView
-                android:id="@+id/textView5"
-                android:text="End Date:"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRow6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dip" >
+    <TextView
+        android:id="@+id/view_transactionAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/view_bonusAmount"
+        android:text="Transaction amount: 50$" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:text="End Date goes here"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRow7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dip" >
-            <TextView
-                android:id="@+id/textView7"
-                android:text="Reward Type:"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRow8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dip" >
+    <TextView
+        android:id="@+id/view_offerStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/view_transactionAmount"
+        android:text="Start date: 2015-07-21" />
 
-            <TextView
-                android:id="@+id/textView8"
-                android:text="Reward type goes here"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-    </TableLayout>
+    <TextView
+        android:id="@+id/view_offerEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/view_offerStartDate"
+        android:text="End date: 2015-07-22" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:id="@+id/view_report"
+        android:layout_below="@+id/view_offerEndDate"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/graph1" />
+
+    <Button
+        android:id="@+id/view_cancel_button"
+        style="?android:textAppearanceSmall"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_report"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true"
+        android:elegantTextHeight="true"
+        android:enabled="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:text="@string/cancel_button"
+        android:textStyle="bold" />
+
+
+
+
 </RelativeLayout>

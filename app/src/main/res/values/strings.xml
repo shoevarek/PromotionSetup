@@ -13,6 +13,12 @@
     <string name="radio_btn_Five_Percent">5</string>
     <string name="radio_btn_Ten_Percent">10</string>
 
+    <!-- summary view-->
+    <string name="view_bonus_amount">Bonus amount: %1$,.2f USD</string>
+    <string name="view_trans_amount">Minimum amount: %1$,.2f USD</string>
+    <string name="view_start_dt">Start date: %s</string>
+    <string name="view_end_dt">End date: %s</string>
+
     <string-array name="offer_type">
         <item>Statement Credit</item>
         <item>Cash Back</item>

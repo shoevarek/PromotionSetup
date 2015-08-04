@@ -196,8 +196,6 @@ public class ListPromotions extends ListActivity {
                     viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            // TODO: add promotion to context
-
                             Intent i = new Intent(getApplicationContext(), PromotionSummary.class);
                             i.putExtra("current_promotion", promotion);
                             startActivity(i);
@@ -214,8 +212,6 @@ public class ListPromotions extends ListActivity {
                     viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            // TODO: add promotion to context
-
                             Intent i = new Intent(getApplicationContext(), PromotionSummary.class);
                             i.putExtra("current_promotion", promotion);
                             startActivity(i);
@@ -230,8 +226,6 @@ public class ListPromotions extends ListActivity {
                     viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            // TODO: add promotion to context
-
                             Intent i = new Intent(getApplicationContext(), PromotionSetup.class);
                             i.putExtra("current_promotion", promotion);
                             startActivity(i);
