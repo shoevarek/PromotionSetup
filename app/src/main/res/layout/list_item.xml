@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:divider="?android:dividerVertical"
     android:dividerPadding="8dp"
-    android:showDividers="middle">
+    android:showDividers="middle"
+    android:id="@+id/promo_row">
 
     <!--
         Any view or view group can become interactive by simply setting the
@@ -24,19 +25,26 @@
         android:clickable="true"
         android:focusable="true"
         android:gravity="center_vertical"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
         android:background="?android:selectableItemBackground">
 
         <TextView style="?android:textAppearanceListItemSmall"
-            android:id="@android:id/text1"
+            android:id="@+id/promo_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/item_title" />
+            android:text="@string/item_title"
+            android:textStyle="bold"
+            android:textSize="14sp" />
 
-        <TextView style="?android:textAppearanceSmall"
-            android:id="@android:id/text2"
+        <TextView
+            android:id="@+id/promo_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/item_subtitle" />
+            android:text="@string/item_subtitle"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
@@ -45,11 +53,20 @@
         ?android:borderlessButtonStyle removes its border and sets the
         background to ?android:selectableItemBackground, as described above.
     -->
+    <ImageButton
+        android:layout_width="@dimen/standard_touch_target_size"
+        android:layout_height="match_parent"
+        android:id="@+id/imageButton"
+        android:src="@drawable/ic_av_timer_white_24dp"
+        style="?android:borderlessButtonStyle"
+        android:contentDescription="@string/item_status"
+        android:longClickable="false" />
+
     <ImageButton android:id="@+id/secondary_action"
         style="?android:borderlessButtonStyle"
         android:layout_width="@dimen/standard_touch_target_size"
         android:layout_height="match_parent"
-        android:src="@mipmap/ic_action_settings"
+        android:src="@drawable/ic_settings_white_36dp"
         android:contentDescription="@string/item_tooltip" />
 
 </LinearLayout>

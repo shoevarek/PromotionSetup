@@ -35,5 +35,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:id="@+id/lst_Promotions"
-        android:scrollbarStyle="outsideOverlay" />
+        android:scrollbarStyle="outsideOverlay"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:layout_marginTop="20dp" />
 </LinearLayout>
