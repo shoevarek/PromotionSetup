@@ -11,8 +11,11 @@ import android.widget.BaseAdapter;
 import android.widget.Toast;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import hackaton.promotionsetup.R;
+import hackaton.promotionsetup.entities.Promotion;
+import hackaton.promotionsetup.entities.PromotionStatus;
 
 public class ListPromotions extends ListActivity {
 
@@ -59,8 +62,18 @@ public class ListPromotions extends ListActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private List<Object> createTestPromotions() {
+    private List<Promotion> createTestPromotions() {
+        List<Promotion> promotions = new ArrayList<Promotion>();
+
         // TODO: complete implementation
+        return promotions;
+    }
+
+    private Promotion createPromotion(String description, PromotionStatus currentStatus, double bonusAmount, double minAmount) {
+        // TODO: complete implementation
+        Promotion promo = new Promotion();
+
+
         return null;
     }
 
