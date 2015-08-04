@@ -3880,43 +3880,52 @@
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:divider="?android:dividerHorizontal"
+    android:orientation="vertical"
     android:showDividers="middle">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/lst_Promotions"
-        android:scrollbarStyle="outsideOverlay"
-        android:paddingLeft="2dp"
-        android:paddingRight="2dp"
-        android:layout_marginTop="20dp" />
     <LinearLayout
-        android:orientation="horizontal"
+        style="?android:buttonBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="?android:buttonBarStyle">
+        android:layout_height="40pt"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_summary"
             android:id="@+id/btn_Summary"
-            android:background="?android:attr/selectableItemBackground"
             style="?android:buttonBarButtonStyle"
-            android:layout_weight="1" />
-
-        <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/btn_new"
-            android:id="@+id/btn_New"
+            android:layout_weight="1"
             android:background="?android:attr/selectableItemBackground"
+            android:text="@string/btn_summary" />
+
+        <Button
+            android:id="@+id/btn_New"
             style="?android:buttonBarButtonStyle"
-            android:layout_weight="1" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/btn_new" />
     </LinearLayout>
+
+    <LinearLayout
+        style="?android:buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/lst_Promotions"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:scrollbarStyle="outsideOverlay" />
+    </LinearLayout>
+
 </LinearLayout>
