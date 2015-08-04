@@ -1,8 +1,6 @@
 package hackaton.promotionsetup.activities;
 
-import android.app.Activity;
 import android.app.ListActivity;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Toast;
 
+
+import java.util.List;
 import hackaton.promotionsetup.R;
 
 public class ListPromotions extends ListActivity {
@@ -57,6 +57,11 @@ public class ListPromotions extends ListActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private List<Object> createTestPromotions() {
+        // TODO: complete implementation
+        return null;
     }
 
     private BaseAdapter mListAdapter = new BaseAdapter() {
