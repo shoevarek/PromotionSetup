@@ -1,11 +1,12 @@
 package hackaton.promotionsetup.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by vatermann on 8/3/2015.
  */
-public class Promotion {
+public class Promotion implements Serializable {
     private String id;
     private String title;
     private Date start;

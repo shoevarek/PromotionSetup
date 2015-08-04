@@ -311,4 +311,3 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }
     }
 }
-

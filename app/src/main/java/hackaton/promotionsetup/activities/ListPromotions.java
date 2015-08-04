@@ -93,6 +93,7 @@ public class ListPromotions extends ListActivity {
         promotions.add(createPromotion("P010", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-07-04", "2015-07-05"));
         promotions.add(createPromotion("P011", "Spend 50$ and get 5$ off", PromotionStatus.EXPIRED, 5.0d, 50.0d, "2015-07-11", "2015-07-12"));
         promotions.add(createPromotion("P012", "Spend 10$ and get 1$ off", PromotionStatus.EXPIRED, 1.0d, 10.0d, "2015-07-18", "2015-07-19"));
+        promotions.add(createPromotion("P013", "Spend 100$ and get 10$ off", PromotionStatus.DRAFT, 10.0d, 100.0d, "2015-08-06", "2015-08-07"));
 
         return promotions;
     }
@@ -194,34 +195,64 @@ public class ListPromotions extends ListActivity {
                     viewHolder.getViewButton().setImageResource(R.drawable.ic_equalizer_white_24dp);
                     viewHolder.getStatusButton().setImageResource(R.drawable.ic_av_timer_white_24dp);
                     viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_active));
+                    viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            // TODO: add promotion to context
+
+                            Intent i = new Intent(getApplicationContext(), PromotionSummary.class);
+                            i.putExtra("current_promotion", promotion);
+                            startActivity(i);
+                        }
+                    });
                     break;
                 case EXPIRED:
                     viewHolder.getRowLayout().setBackgroundColor(0xFF00B0FF);
                     viewHolder.getViewButton().setImageResource(R.drawable.ic_equalizer_white_24dp);
                     viewHolder.getStatusButton().setImageResource(R.drawable.ic_history_white_24dp);
                     viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_expired));
+                    viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            // TODO: add promotion to context
+
+                            Intent i = new Intent(getApplicationContext(), PromotionSummary.class);
+                            i.putExtra("current_promotion", promotion);
+                            startActivity(i);
+                        }
+                    });
                     break;
                 case DRAFT:
                     viewHolder.getViewButton().setImageResource(R.drawable.ic_settings_white_24dp);
-                    viewHolder.getStatusButton().setImageResource(R.drawable.ic_history_white_24dp);
+                    viewHolder.getStatusButton().setImageResource(R.drawable.ic_build_white_24dp);
                     viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_draft));
+                    viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            // TODO: add promotion to context
+
+                            Intent i = new Intent(getApplicationContext(), PromotionSetup.class);
+                            i.putExtra("current_promotion", promotion);
+                            startActivity(i);
+                        }
+                    });
                     break;
                 default:
                     viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_expired));
             }
 
             // set UI widget listeners
-            viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            //viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
+            //    @Override
+            //public void onClick(View view) {
                     //Toast.makeText(ListPromotions.this,
                     //        R.string.item_tooltip,
                     //        Toast.LENGTH_SHORT).show();
-                    String tooltip = getResources().getString(R.string.item_tooltip);
+            //        String tooltip = getResources().getString(R.string.item_tooltip);
 
-                    Toast.makeText(ListPromotions.this, String.format(tooltip, promotion.getId()), Toast.LENGTH_SHORT).show();
-                }
-            });
+            //        Toast.makeText(ListPromotions.this, String.format(tooltip, promotion.getId()), Toast.LENGTH_SHORT).show();
+            //    }
+            //});
 
             return convertView;
         }
