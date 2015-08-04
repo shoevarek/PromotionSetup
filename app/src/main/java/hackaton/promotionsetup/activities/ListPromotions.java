@@ -195,34 +195,64 @@ public class ListPromotions extends ListActivity {
                     viewHolder.getViewButton().setImageResource(R.drawable.ic_equalizer_white_24dp);
                     viewHolder.getStatusButton().setImageResource(R.drawable.ic_av_timer_white_24dp);
                     viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_active));
+                    viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            // TODO: add promotion to context
+
+                            Intent i = new Intent(getApplicationContext(), PromotionSummary.class);
+                            i.putExtra("current_promotion", promotion);
+                            startActivity(i);
+                        }
+                    });
                     break;
                 case EXPIRED:
                     viewHolder.getRowLayout().setBackgroundColor(0xFF00B0FF);
                     viewHolder.getViewButton().setImageResource(R.drawable.ic_equalizer_white_24dp);
                     viewHolder.getStatusButton().setImageResource(R.drawable.ic_history_white_24dp);
                     viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_expired));
+                    viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            // TODO: add promotion to context
+
+                            Intent i = new Intent(getApplicationContext(), PromotionSummary.class);
+                            i.putExtra("current_promotion", promotion);
+                            startActivity(i);
+                        }
+                    });
                     break;
                 case DRAFT:
                     viewHolder.getViewButton().setImageResource(R.drawable.ic_settings_white_24dp);
                     viewHolder.getStatusButton().setImageResource(R.drawable.ic_build_white_24dp);
                     viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_draft));
+                    viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            // TODO: add promotion to context
+
+                            Intent i = new Intent(getApplicationContext(), PromotionSetup.class);
+                            i.putExtra("current_promotion", promotion);
+                            startActivity(i);
+                        }
+                    });
                     break;
                 default:
                     viewHolder.getStatusText().setText(getResources().getString(R.string.item_status_expired));
             }
 
             // set UI widget listeners
-            viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            //viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
+            //    @Override
+            //public void onClick(View view) {
                     //Toast.makeText(ListPromotions.this,
                     //        R.string.item_tooltip,
                     //        Toast.LENGTH_SHORT).show();
-                    String tooltip = getResources().getString(R.string.item_tooltip);
+            //        String tooltip = getResources().getString(R.string.item_tooltip);
 
-                    Toast.makeText(ListPromotions.this, String.format(tooltip, promotion.getId()), Toast.LENGTH_SHORT).show();
-                }
-            });
+            //        Toast.makeText(ListPromotions.this, String.format(tooltip, promotion.getId()), Toast.LENGTH_SHORT).show();
+            //    }
+            //});
 
             return convertView;
         }
