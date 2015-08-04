@@ -44,10 +44,16 @@ public class ListPromotions extends ListActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            // TODO: create new intent and register it with view promotion summary action
-            return true;
+        if (id == R.id.Logoff) {
+            item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(i);
+
+                    return true;
+                }
+            });
         }
 
         return super.onOptionsItemSelected(item);
