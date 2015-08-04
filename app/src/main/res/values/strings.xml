@@ -3,10 +3,12 @@
     <string name="action_Logoff">Logoff</string>
     <string name="btn_new">New</string>
     <string name="btn_summary">Summary</string>
-    <string name="item_title">Spend 20$ and Get 5% Off</string>
-    <string name="item_subtitle">Starts YYYY-MM-DD and ends YYYY-MM-DD</string>
+    <string name="item_title">Spend 20$ and get 5$ off</string>
+    <string name="item_subtitle">From YYYY-MM-DD to YYYY-MM-DD</string>
     <string name="item_tooltip">See promotion details for promotion %s</string>
-    <string name="item_status">Active</string>
+    <string name="item_status_active">Active</string>
+    <string name="item_status_draft">Draft</string>
+    <string name="item_status_expired">Expired</string>
     <string name="radio_btn_One_Percent">1</string>
     <string name="radio_btn_Five_Percent">5</string>
     <string name="radio_btn_Ten_Percent">10</string>
@@ -23,4 +25,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="Radio_Btn_Cash_Back">Cash Back</string>
+    <string name="Offer">Statement Credit Offer Description</string>
+    <string name="Minimum_Spend">Minimum Amount to Spend</string>
+    <string name="Bonus_Amount">Bonus Amount</string>
+    <string name="Start_Date">Start Date</string>
+    <string name="End_Date">End Date</string>
+    <string name="save_button">Save</string>
+    <string name="cancel_button">Cancel</string>
 </resources>
