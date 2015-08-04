@@ -31,7 +31,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="Radio_Btn_Cash_Back">Cash Back</string>
-    <string name="Offer">Statement Credit Offer Description</string>
+    <string name="Offer">Statement Credit Offer</string>
     <string name="Minimum_Spend">Minimum Amount to Spend</string>
     <string name="Bonus_Amount">Bonus Amount</string>
     <string name="Start_Date">Start Date</string>
