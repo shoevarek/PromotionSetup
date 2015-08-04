@@ -5,8 +5,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.Activity;
+import android.view.View;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import hackaton.promotionsetup.R;
+import hackaton.promotionsetup.entities.Promotion;
 
 public class PromotionSetup extends Activity {
 

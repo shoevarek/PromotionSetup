@@ -30,6 +30,6 @@
     <string name="Bonus_Amount">Bonus Amount</string>
     <string name="Start_Date">Start Date</string>
     <string name="End_Date">End Date</string>
-    <string name="save_button">Save</string>
+    <string name="submit_button">Submit</string>
     <string name="cancel_button">Cancel</string>
 </resources>

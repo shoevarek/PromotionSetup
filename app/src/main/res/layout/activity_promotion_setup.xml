@@ -19,63 +19,95 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/offerText"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView" />
+        android:layout_below="@+id/textView"
+        android:enabled="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Offer description" />
 
-    <TextView
-        android:text="@string/Minimum_Spend"
+    <EditText
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/abc_button_inset_vertical_material"
-        android:layout_below="@+id/editText"
-        android:inputType="textWebEditText"
-        android:layout_alignParentStart="true"
-        android:id="@+id/promoMinAmountLabel"
-        android:layout_alignBottom="@+id/editText"
-        android:editable="true" />
-
-    <TextView
-        android:text="@string/Bonus_Amount"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
         android:id="@+id/bonusAmount"
-        android:layout_below="@+id/promoMinAmountLabel"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="46dp" />
+        android:layout_below="@+id/offerText"
+        android:enabled="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Bonus Amount" />
 
-    <Button android:id="@+id/save_button" style="?android:textAppearanceSmall"
-        android:layout_width="129dp" android:layout_height="0dp"
-        android:layout_marginTop="60dp" android:text="@string/save_button"
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/transactionAmount"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/bonusAmount"
+        android:enabled="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Minium spend Amount" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/offerStartDate"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/transactionAmount"
+        android:enabled="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Offer Start Date" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/offerEndDate"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/offerStartDate"
+        android:enabled="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Offer End Date" />
+
+
+    <Button android:id="@+id/submit_button" style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_button"
         android:textStyle="bold"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="120dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_below="@+id/offerEndDate"
+        android:enabled="true" />
+
 
     <Button android:id="@+id/cancel_button" style="?android:textAppearanceSmall"
-        android:layout_width="129dp" android:layout_height="0dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginRight="60dp"
-    android:text="@string/cancel_button"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_button"
         android:textStyle="bold"
-        android:layout_gravity="center_horizontal" />
-
-
-    <DatePicker
-        android:text="@string/Start_Date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/StartdatePicker"
-        android:calendarViewShown="true"
-        android:layout_below="@+id/bonusAmount"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="150dp"
-        android:layout_alignEnd="@+id/save_button" />
-
-    <DatePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/EndDatePicker"
-        android:calendarViewShown="true"
-        android:layout_alignTop="@+id/StartdatePicker"
-        android:layout_toEndOf="@+id/editText" />
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/offerEndDate"
+        android:layout_toRightOf="@+id/submit_button"
+        android:enabled="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:elegantTextHeight="true"
+        android:clickable="true"
+        android:hint="Offer Start Date" />
 
 
 </RelativeLayout>
