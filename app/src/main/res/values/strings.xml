@@ -22,4 +22,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="Radio_Btn_Cash_Back">Cash Back</string>
+    <string name="Offer">Statement Credit Offer Description</string>
+    <string name="Minimum_Spend">Minimum Amount to Spend</string>
+    <string name="Bonus_Amount">Bonus Amount</string>
+    <string name="Start_Date">Start Date</string>
+    <string name="End_Date">End Date</string>
+    <string name="save_button">Save</string>
+    <string name="cancel_button">Cancel</string>
 </resources>
