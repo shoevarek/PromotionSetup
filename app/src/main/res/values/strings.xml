@@ -5,7 +5,8 @@
     <string name="btn_summary">Summary</string>
     <string name="item_title">Spend 20$ and Get 5% Off</string>
     <string name="item_subtitle">Starts YYYY-MM-DD and ends YYYY-MM-DD</string>
-    <string name="item_tooltip">See promotion details</string>
+    <string name="item_tooltip">See promotion details for promotion %s</string>
+    <string name="item_status">Active</string>
     <string name="radio_btn_One_Percent">1</string>
     <string name="radio_btn_Five_Percent">5</string>
     <string name="radio_btn_Ten_Percent">10</string>

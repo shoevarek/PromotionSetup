@@ -167,7 +167,7 @@ public class ListPromotions extends ListActivity {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             PromotionViewHolder viewHolder = new PromotionViewHolder();
 
             if (convertView == null) {
@@ -181,7 +181,7 @@ public class ListPromotions extends ListActivity {
             viewHolder.setViewButton((ImageButton) convertView.findViewById(R.id.secondary_action));
 
             // set UI widget content
-            Promotion promotion = promotions.get(position);
+            final Promotion promotion = promotions.get(position);
             viewHolder.getTitleText().setText(promotion.getTitle());
             viewHolder.getDurationText().setText(formatDurationText(promotion.getStart(), promotion.getEnd()));
 
@@ -196,9 +196,12 @@ public class ListPromotions extends ListActivity {
             viewHolder.getViewButton().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(ListPromotions.this,
-                            R.string.item_tooltip,
-                            Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(ListPromotions.this,
+                    //        R.string.item_tooltip,
+                    //        Toast.LENGTH_SHORT).show();
+                    String tooltip = getResources().getString(R.string.item_tooltip);
+
+                    Toast.makeText(ListPromotions.this, String.format(tooltip, promotion.getId()), Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -209,7 +212,7 @@ public class ListPromotions extends ListActivity {
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
             StringBuilder sb = new StringBuilder();
-            sb.append(df.format(start)).append(" to ").append(df.format(end));
+            sb.append("From ").append(df.format(start)).append(" to ").append(df.format(end));
 
             return sb.toString();
         }
